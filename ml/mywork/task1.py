@@ -16,31 +16,30 @@ from collections import Counter
 import nltk
 from nltk.corpus import stopwords
 
-#uncomment the line below if the system doesnot have nltk data downloaded (only for the first execution)
-#nltk.download()
+
 counter=Counter()
 
-def explore_corpus(corpus_fname):
+def create_counter(corpus_fname,punctuation=string.punctuation,stop_words=stopwords.words("english")):
     """ This function reads the text file 'corpus_fname', tokenizes the text file, and
-    creates a list of words->count to produce the most popular and the least popular terms 
+    creates a list of words->count 
     
     corpus_fname - data file name to be explored 
+    punctuation - set off punctuation symbols to be removed; 
+    stop_words - list of stop words; default is stopwords from nltk data
     
     """
     raw_corpus=open(corpus_fname)
     data_list=[]
     #create a tokenized list of deals data, where all punctuations and english stopwords are removed
-    data_list=[[word for word in line.lower().translate(None,string.punctuation).split() 
-                if word not in stopwords.words("english")] for line in raw_corpus] 
+    data_list=[[word for word in line.lower().translate(None,punctuation).split() 
+                if word not in stop_words] for line in raw_corpus] 
 
     #count the occurrences of the word in modified data
     for vec in data_list:
         for word in vec:
             counter[word] += 1
-            
-    print most_popular_term(1)
-    print least_popular_term(1)
-    print guitar_types_count(raw_corpus)
+    return counter        
+    
     
 def most_popular_term(n):
     """ Return n most frequent terms from the modified corpus"""
@@ -50,8 +49,8 @@ def least_popular_term(n):
     """ Return n least frequent terms from the modified corpus"""
     return counter.most_common()[-n:]
 
-def guitar_types_count(raw_corpus):
-    """ Return the number of guitar types
+def guitar_types(raw_corpus):
+    """ Return the unique list of guitar types
 
     This function collects the list of tokenzed sentences having the word 'guitar' from 'raw_corpus' 
     to identify guitar types.    
@@ -79,8 +78,13 @@ def guitar_types_count(raw_corpus):
                 #where tagged word is a tuple (word,pos)
                 leaves=stree.leaves()           
                 if 'guitar' in leaves[1]: types.add(leaves[0][0]) 
-    return len(types)
+    return list(types)  
     
+def run(fname):
+    create_counter(fname)
+    print most_popular_term(1)
+    print least_popular_term(1)
+    print len(guitar_types)
+
+run('../data/deals.txt')
     
-#explore the file    
-explore_corpus('../data/deals.txt')
