@@ -17,8 +17,6 @@ import nltk
 from nltk.corpus import stopwords
 
 
-counter=Counter()
-
 def create_counter(corpus_fname,punctuation=string.punctuation,stop_words=stopwords.words("english")):
     """ This function reads the text file 'corpus_fname', tokenizes the text file, and
     creates a list of words->count 
@@ -30,6 +28,7 @@ def create_counter(corpus_fname,punctuation=string.punctuation,stop_words=stopwo
     """
     raw_corpus=open(corpus_fname)
     data_list=[]
+    counter=Counter()
     #create a tokenized list of deals data, where all punctuations and english stopwords are removed
     data_list=[[word for word in line.lower().translate(None,punctuation).split() 
                 if word not in stop_words] for line in raw_corpus] 
@@ -41,11 +40,11 @@ def create_counter(corpus_fname,punctuation=string.punctuation,stop_words=stopwo
     return counter        
     
     
-def most_popular_term(n):
+def most_popular_term(counter,n):
     """ Return n most frequent terms from the modified corpus"""
     return counter.most_common(n)
 
-def least_popular_term(n):
+def least_popular_term(counter,n):
     """ Return n least frequent terms from the modified corpus"""
     return counter.most_common()[-n:]
 
@@ -81,10 +80,17 @@ def guitar_types(raw_corpus):
     return list(types)  
     
 def run(fname):
-    create_counter(fname)
-    print most_popular_term(1)
-    print least_popular_term(1)
-    print len(guitar_types)
+    """ Run the module to get 
+    
+    1) The most popular term
+    2) The least popular term
+    3) The number of guitar types
+    """
+    counter=create_counter(fname)
+    print most_popular_term(counter,1)
+    print least_popular_term(counter,1)
+    print len(guitar_types(open(fname)))
 
-run('../data/deals.txt')
+#uncomment to run independtly
+#run('../data/deals.txt')
     
