@@ -15,7 +15,8 @@ import os
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-from gensim import corpora, models
+from gensim import corpora, models, matutils
+from sklearn.cluster import KMeans
 import numpy
 
 #logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -125,14 +126,33 @@ def model_with_hdplda(corpus,dictionary,hdplda_file):
     return hdplda
 
 
-def topic_based_clustering(model,dictionary,corpus):
-    return None        
-
-
-
-
-
-
+def topic_based_kmeans(corpus,num_of_topics,k):
+    """ Computed K-means clustering and returns the model
+    
+    corpus - MMCorpus that is changed to dense matrix for use in Scikit-learn KMeans computation
+    num_of_topics - number of features for new corpus
+    k - number of clusters
+    
+    """
+    # convert corpus to dense matrix with dimentiosn number of documents, number of topics
+    ncorpus=matutils.corpus2dense(corpus,num_of_topics)
+    # Initialize KMeans from Scikit-learn
+    kmeans=KMeans(k,init='k-means++')
+    # Fit the model
+    kmeans.fit(ncorpus)
+    return kmeans  
+    
+def print_topics(model,n,k):
+    """ Print n number of topics with k terms from the model"""
+    id=0
+    for topic in model.show_topics(n,k,formatted=False):
+        print id, "  --->  ",
+        for term in topic:
+            print term[1], #print only word
+        print "\n"
+        id += 1
+   
+    
 # Create of Load the dictionary and corpus from the documents file
 doc_fname='../data/deals.txt'
 dict_fname='../models/deals.dict'
@@ -143,12 +163,19 @@ num_of_topics=100
 
 lsi_file='../models/lsi_100topics.model'
 lsi=model_with_LSI(corpus,dictionary,num_of_topics,lsi_file)
+corpus_lsi=lsi[corpus]
 
+print_topics(lsi,10,5)
+ 
 lda_file='../models/lda_100topics.model'
 lda=model_with_LDA(corpus,dictionary,num_of_topics,lsi_file)
-
+corpus_lda=lda[corpus]
+# 
 hdplda_file='../models/hdplda.model'
 hdplda=model_with_hdplda(corpus,dictionary,hdplda_file)
+corpus_hdplda=lsi[corpus]
+
+
 
 
 #train TF-IDF model and create 
