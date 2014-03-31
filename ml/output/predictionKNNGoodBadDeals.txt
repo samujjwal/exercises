@@ -20,85 +20,119 @@ Bad Good Deals with KNN : neighbors = 5 accuracy = 0.666666666667 F1 = 0.4444444
 
 Prediction with test deals
 
-good -->  visit amor.com 
+Good -->  visit amor.com 
 
-good -->  homecoming dresses:10% off on $99
+Good -->  homecoming dresses:10% off on $99
 
-good -->  change your shirt. change the world!
+Good -->  change your shirt. change the world!
 
-good -->  shop best sellers at chineselaundry.com!
+Good -->  shop best sellers at chineselaundry.com!
 
-good -->  if you want to change the destination url, please make sure to use http://cj.discountwatchstore.com as the domain. thanks.
+Good -->  if you want to change the destination url, please make sure to use http://cj.discountwatchstore.com as the domain. thanks.
 
-good -->  save $25 on orders over $100! the latest styles of rings, earrings, necklaces, bracelets, diamond jewelry and more at myjewelrybox.com! use coupon code: 25off
+Good -->  save $25 on orders over $100! the latest styles of rings, earrings, necklaces, bracelets, diamond jewelry and more at myjewelrybox.com! use coupon code: 25off
 
-good -->  smart deals playa del carmen
+Good -->  smart deals playa del carmen
 
-good -->  imagine you with beautiful, delicious lips - crabtree & evelyn lip tints
+Good -->  imagine you with beautiful, delicious lips - crabtree & evelyn lip tints
 
-good -->  product specfic ad - eajuk500
+Bad -->  stutterheim eu
 
-good -->  furla shop online!
+Good -->  product specfic ad - eajuk500
 
-good -->  the book of mormon has dazzled all who see it. and the critics have loved it by honoring the musical with an amazing nine tony awards, including best musical and best book of a musical. its your turn to find out why this show ranks among those popular on broadway today.
+Bad -->  promotes relaxation
 
-good -->  join linea pelle on facebook today
+Bad -->  find auditions - sign up for free with explore talent
 
-good -->  get 70% off hair treatments in la
+Bad -->  up to 40% off edlund products from katom.com! click here!
 
-good -->  bike tour of budapest page.
+Good -->  furla shop online!
 
-good -->  browse gift books and boxed sets at prices you won't find anywhere else! as low as $5.97. start shopping now at booksamillion.com!
+Bad -->  skirt sports athletic wear for women up to 64% off
 
-good -->  cisco small business 300 series managed switch sg300-28p - switch - 28 ports - managed - desktop, rack-mountable
+Bad -->  homepage.
 
-good -->  tungsten carbide bracelets
+Good -->  the book of mormon has dazzled all who see it. and the critics have loved it by honoring the musical with an amazing nine tony awards, including best musical and best book of a musical. its your turn to find out why this show ranks among those popular on broadway today.
 
-good -->  http://www.oneplay.com/download/details/11017?utm_source=cj&utm_medium=cpa&utm_term=pc&utm_content=bf4&utm_campaign=cj-sales
+Good -->  join linea pelle on facebook today
 
-good -->  check out neff watches and hats at journeys now!  neff watches have a bold colorful look that will keep you checking the time again and again.  show now at journeys!
+Good -->  get 70% off hair treatments in la
 
-good -->  6 new raquel welch styles!
+Good -->  bike tour of budapest page.
 
-good -->  rainfall books
+Good -->  browse gift books and boxed sets at prices you won't find anywhere else! as low as $5.97. start shopping now at booksamillion.com!
 
-good -->  important: if using different destination url, please include parameters that come after factoryoutletstore.com/? in your link. coupon will not work otherwise. &#xd;
+Good -->  cisco small business 300 series managed switch sg300-28p - switch - 28 ports - managed - desktop, rack-mountable
 
-good -->  nuance es - nueva versin - dragon naturallyspeaking 12 home - ahorre un 20%. coupon - 'dns12offer'
+Good -->  tungsten carbide bracelets
 
-good -->  avira system speed up
+Bad -->  shop diane von furstenberg shoes, pumps, sandals and boots at footnotesonline designer shoes
 
-good -->  free shipping & accessories with cameras
+Good -->  http://www.oneplay.com/download/details/11017?utm_source=cj&utm_medium=cpa&utm_term=pc&utm_content=bf4&utm_campaign=cj-sales
 
-good -->  quickfire wines sale as seen on bravo's top chef
+Bad -->  promo_hotel two-day sale! save big on limited time offers every tuesday with travelocity!
 
-good -->  more than 1,200 free crochet patterns. click here today!
+Good -->  check out neff watches and hats at journeys now!  neff watches have a bold colorful look that will keep you checking the time again and again.  show now at journeys!
 
-good -->  go to shopgetorganized.com.
+Bad -->  cabinets
 
-good -->  invicta deals of the week (up to 92% off)
+Good -->  6 new raquel welch styles!
 
-good -->  29% off  on select products at stockngo.com in honor of leap year. 
+Good -->  rainfall books
 
-good -->  nuance de - neue version - pdf 8 converter -20% sparen - gutscheincode - 'dns12offer' - endet: 31/05/13 - jetzt kaufen.
+Bad -->  wedding rings
 
-good -->  if you are looking for a unique birthday gift for men, visit cloud 9 living. they offer over 1,700 experience gifts ranging from race car driving and fighter pilot for a day to golf gifts and wine tastings. this will surely be a birthday gift he'll remember forever!
+Good -->  important: if using different destination url, please include parameters that come after factoryoutletstore.com/? in your link. coupon will not work otherwise. &#xd;
 
-good -->  wisefire 4 gallon 240 cup fuel source - grab now at $79.99!
+Good -->  nuance es - nueva versin - dragon naturallyspeaking 12 home - ahorre un 20%. coupon - 'dns12offer'
 
-good -->  10% off. use promo code uncorked10. exp 12/31/13.
+Bad -->  helmut helmut lang
 
-good -->  logitech k120 usb keyboard -  black
+Good -->  avira system speed up
 
-good -->  store all eagle ford products
+Good -->  free shipping & accessories with cameras
 
-good -->  $15 off any size order $75+ plus great free shipping   use <b>myink15</b>.  expires sept 30
+Good -->  quickfire wines sale as seen on bravo's top chef
 
-good -->  irobot new logo
+Good -->  more than 1,200 free crochet patterns. click here today!
 
-good -->  2014 burton snowboard gear in stock at the-house.com!  get it before it's gone!
+Good -->  go to shopgetorganized.com.
 
-good -->  9/1-9/7 - online only! up to 30% off chain saws from marketplace partners at sears.com
+Good -->  invicta deals of the week (up to 92% off)
 
-good -->  disc duplication services from tune core
+Good -->  29% off  on select products at stockngo.com in honor of leap year. 
+
+Good -->  nuance de - neue version - pdf 8 converter -20% sparen - gutscheincode - 'dns12offer' - endet: 31/05/13 - jetzt kaufen.
+
+Bad -->  general text link
+
+Bad -->  harbor freight super coupons: save 30% to 60% off!&#xd;
+
+Bad -->  fast acting, 100% natural, certified organic&#xd;
+
+Good -->  if you are looking for a unique birthday gift for men, visit cloud 9 living. they offer over 1,700 experience gifts ranging from race car driving and fighter pilot for a day to golf gifts and wine tastings. this will surely be a birthday gift he'll remember forever!
+
+Good -->  wisefire 4 gallon 240 cup fuel source - grab now at $79.99!
+
+Bad -->  permanently delete hard drive data with wipedrive for mac.
+
+Bad -->  ghirardelli chocolate homepage
+
+Good -->  10% off. use promo code uncorked10. exp 12/31/13.
+
+Good -->  logitech k120 usb keyboard -  black
+
+Good -->  store all eagle ford products
+
+Good -->  $15 off any size order $75+ plus great free shipping   use <b>myink15</b>.  expires sept 30
+
+Good -->  irobot new logo
+
+Good -->  2014 burton snowboard gear in stock at the-house.com!  get it before it's gone!
+
+Good -->  9/1-9/7 - online only! up to 30% off chain saws from marketplace partners at sears.com
+
+Good -->  disc duplication services from tune core
+
+Bad -->  farmyard child's water bottle
 

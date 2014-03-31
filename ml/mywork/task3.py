@@ -164,7 +164,9 @@ ofile1.write("Prediction with test deals\n\n")
 prediction=knn.predict(test_mat)
 for i in range(len(prediction)):
     if(prediction[i]==0):
-        ofile1.write("good -->  "+test_deals[i]+"\n")
+        ofile1.write("Good -->  "+test_deals[i]+"\n")
+    else:
+        ofile1.write("Bad -->  "+test_deals[i]+"\n")
 
 ofile1.close()
 
@@ -193,6 +195,9 @@ prediction=knn.predict(test_mat)
 for i in range(len(prediction)):
     if(prediction[i]==0):
         ofile1.write("Coupon -->  "+test_deals[i]+"\n")
+    else:
+        ofile1.write("NoCoupon -->  "+test_deals[i]+"\n")
+    
 
 ofile1.close()
 

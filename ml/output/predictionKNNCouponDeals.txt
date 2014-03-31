@@ -20,19 +20,53 @@ Coupon No-Coupon Deals with KNN : neighbors = 7 accuracy = 1.0 F1 = 1.0
 
 Prediction with test deals
 
+NoCoupon -->  visit amor.com 
+
 Coupon -->  homecoming dresses:10% off on $99
+
+NoCoupon -->  change your shirt. change the world!
 
 Coupon -->  shop best sellers at chineselaundry.com!
 
+NoCoupon -->  if you want to change the destination url, please make sure to use http://cj.discountwatchstore.com as the domain. thanks.
+
 Coupon -->  save $25 on orders over $100! the latest styles of rings, earrings, necklaces, bracelets, diamond jewelry and more at myjewelrybox.com! use coupon code: 25off
+
+NoCoupon -->  smart deals playa del carmen
+
+NoCoupon -->  imagine you with beautiful, delicious lips - crabtree & evelyn lip tints
+
+NoCoupon -->  stutterheim eu
+
+NoCoupon -->  product specfic ad - eajuk500
+
+NoCoupon -->  promotes relaxation
 
 Coupon -->  find auditions - sign up for free with explore talent
 
 Coupon -->  up to 40% off edlund products from katom.com! click here!
 
+NoCoupon -->  furla shop online!
+
+NoCoupon -->  skirt sports athletic wear for women up to 64% off
+
 Coupon -->  homepage.
 
 Coupon -->  the book of mormon has dazzled all who see it. and the critics have loved it by honoring the musical with an amazing nine tony awards, including best musical and best book of a musical. its your turn to find out why this show ranks among those popular on broadway today.
+
+NoCoupon -->  join linea pelle on facebook today
+
+NoCoupon -->  get 70% off hair treatments in la
+
+NoCoupon -->  bike tour of budapest page.
+
+NoCoupon -->  browse gift books and boxed sets at prices you won't find anywhere else! as low as $5.97. start shopping now at booksamillion.com!
+
+NoCoupon -->  cisco small business 300 series managed switch sg300-28p - switch - 28 ports - managed - desktop, rack-mountable
+
+NoCoupon -->  tungsten carbide bracelets
+
+NoCoupon -->  shop diane von furstenberg shoes, pumps, sandals and boots at footnotesonline designer shoes
 
 Coupon -->  http://www.oneplay.com/download/details/11017?utm_source=cj&utm_medium=cpa&utm_term=pc&utm_content=bf4&utm_campaign=cj-sales
 
@@ -40,9 +74,15 @@ Coupon -->  promo_hotel two-day sale! save big on limited time offers every tues
 
 Coupon -->  check out neff watches and hats at journeys now!  neff watches have a bold colorful look that will keep you checking the time again and again.  show now at journeys!
 
+NoCoupon -->  cabinets
+
 Coupon -->  6 new raquel welch styles!
 
 Coupon -->  rainfall books
+
+NoCoupon -->  wedding rings
+
+NoCoupon -->  important: if using different destination url, please include parameters that come after factoryoutletstore.com/? in your link. coupon will not work otherwise. &#xd;
 
 Coupon -->  nuance es - nueva versin - dragon naturallyspeaking 12 home - ahorre un 20%. coupon - 'dns12offer'
 
@@ -50,7 +90,15 @@ Coupon -->  helmut helmut lang
 
 Coupon -->  avira system speed up
 
+NoCoupon -->  free shipping & accessories with cameras
+
 Coupon -->  quickfire wines sale as seen on bravo's top chef
+
+NoCoupon -->  more than 1,200 free crochet patterns. click here today!
+
+NoCoupon -->  go to shopgetorganized.com.
+
+NoCoupon -->  invicta deals of the week (up to 92% off)
 
 Coupon -->  29% off  on select products at stockngo.com in honor of leap year. 
 
