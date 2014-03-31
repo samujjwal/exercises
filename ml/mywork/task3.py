@@ -11,8 +11,19 @@ We would like to see a couple of steps:
 
 Also, provide comments on:
     - How general is your classifier?
+        The classifier can handle any sort of binary classification as seen from the experiment.
+        The same classifier is used to classify good and bad deals as well as the deals that 
+        requires coupon or doesnot require coupon.
+        
+        I could have tested other classifier and run the experiments. I was looking at applying
+        the topic model I generated on Task 2 to be used to idenify the coupon requiring deals.
+        Due to time limit I couldnot complete it.
+        
     - How did you test your classifier?
-
+        The classifier is tested using cross-validation technique where 25% of the training data 
+        was used as a hold out set. For tuning classifier improvement on accuracy and f1 score 
+        was used as criteria.
+        
 """
 import string
 
