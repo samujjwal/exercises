@@ -46,7 +46,7 @@ def tokenize(doc):
     tokens=[stemmer.stem(word) for word in nltk.word_tokenize(raw) if word not in stopwords.words("english")] 
     return tokens
 
-def create_dict_and_corpus(doc_fname,dict_fname,mm_corpus_fname):
+def create_dict_and_corpus(doc_fname,dict_fname):
     """ Returns dictionary and corpus by processing documents
     
     dictionary is saved to dict_fname for future access, 
@@ -55,15 +55,13 @@ def create_dict_and_corpus(doc_fname,dict_fname,mm_corpus_fname):
     """
     dictionary=None
     corpus=None
+    docs=process_docs(doc_fname) #preprocess documents by tokenizing
     if(os.path.isfile(dict_fname)): #check with any file
         dictionary=corpora.Dictionary.load(dict_fname)
-        corpus=corpora.MmCorpus(mm_corpus_fname)
     else:
-        docs=process_docs(doc_fname) #preprocess documents by tokenizing
         dictionary=create_dict(docs)
         dictionary.save(dict_fname)
-        corpus=create_corpus(docs,dictionary)
-        corpora.MmCorpus.serialize(mm_corpus_fname,corpus)
+    corpus=create_corpus(docs,dictionary)
     return dictionary,corpus
 
 def model_with_LSI(corpus,dictionary,num_of_topics,lsi_file):
@@ -99,7 +97,7 @@ def model_with_LDA(corpus,dictionary,num_of_topics,lda_file):
         lda=models.LdaModel.load(lda_file)
     else:
         # Train LDA model for topic modelling -- using default parameters for now
-        lda=models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=num_of_topics)
+        lda=models.ldamodel.LdaModel(corpus=corpus, num_topics=num_of_topics, id2word=dictionary)
         lda.save(lda_file)
     return lda
 
@@ -123,7 +121,7 @@ def model_with_hdplda(corpus,dictionary,hdplda_file):
                                alpha=alpha, eta=hdp.m_eta)
         hdplda.expElogbeta = numpy.array(beta, dtype=numpy.float32)
         hdplda.save(hdplda_file)
-    return hdplda
+    return hdplda, len(alpha)
 
 
 def topic_based_kmeans(corpus,num_of_topics,k):
@@ -152,50 +150,78 @@ def print_topics(model,n,k):
         print "\n"
         id += 1
    
+
+def print_topics_with_groups(model,n,k,group_label,of):
+    """ Print n cluster ID, topic ID, and k terms"""
+    id=0
+    of.write("GroupID  --  TopicID  --->                Terms\n")
+    for topic in model.show_topics(n,k,formatted=False):
+        of.write(str(group_label[id])+"    --    "+str(id)+ "    --->   ")
+        for term in topic:
+            of.write(" "+str(term[1])) #print only word
+        of.write("\n")
+        id += 1
+    of.write("\n")
+
+def run_with_LSI(doc_fname,ofile):
+    """ Generate topics and groups and print the result"""
+    # Create of Load the dictionary and corpus from the documents file
+    dict_fname='../models/deals.dict'
     
-# Create of Load the dictionary and corpus from the documents file
-doc_fname='../data/deals.txt'
-dict_fname='../models/deals.dict'
-mm_corpus_fname='../models/deals.mm'
-dictionary,corpus=create_dict_and_corpus(doc_fname,dict_fname,mm_corpus_fname)
+    dictionary,corpus=create_dict_and_corpus(doc_fname,dict_fname)
+    
+    num_of_topics=50
+    
+    # Load LSI model to generate topics and perfrom grouping
+    lsi_file='../models/lsi.model'
+    lsi=model_with_LSI(corpus,dictionary,num_of_topics,lsi_file)
+    # Perform LSI transforamtion for corpus
+    corpus_lsi=lsi[corpus]
+    #Perform K-Means clustering -- number of clusters needs to be tuned
+    kmeans_lsi=topic_based_kmeans(corpus_lsi,num_of_topics,20)
+    # Print output
+    of=open(ofile,'w')
+    of.write('Topic Modelling with LSI -- K-Means with reduced dimension defined by LSI topics\n\n')    
+    print_topics_with_groups(lsi,num_of_topics,10,kmeans_lsi.labels_,of)
+    of.close()
 
-num_of_topics=100
+def run_with_LDA(doc_fname,ofile):  
+    """ Generate topics and groups and print the result"""
+    # Create of Load the dictionary and corpus from the documents file
+    dict_fname='../models/deals.dict'
+    dictionary,corpus=create_dict_and_corpus(doc_fname,dict_fname)
+    
+    num_of_topics=50
+    # Now perform topic modelling and Clustering using LDA 
+    lda_file='../models/lda.model'
+    lda=model_with_LDA(corpus,dictionary,num_of_topics,lda_file)
+    corpus_lda=lda[corpus]
+    kmeans_lda=topic_based_kmeans(corpus_lda,num_of_topics,20)
+    # Print output
+    of=open(ofile,'w')
+    of.write('Topic Modelling with LDA -- K-Means with reduced dimension defined by LDA topics\n\n')
+    print_topics_with_groups(lda,num_of_topics,10,kmeans_lda.labels_,of)
+    of.close()    
 
-lsi_file='../models/lsi_100topics.model'
-lsi=model_with_LSI(corpus,dictionary,num_of_topics,lsi_file)
-corpus_lsi=lsi[corpus]
-
-print_topics(lsi,10,5)
- 
-lda_file='../models/lda_100topics.model'
-lda=model_with_LDA(corpus,dictionary,num_of_topics,lsi_file)
-corpus_lda=lda[corpus]
-# 
-hdplda_file='../models/hdplda.model'
-hdplda=model_with_hdplda(corpus,dictionary,hdplda_file)
-corpus_hdplda=lsi[corpus]
-
-
-
-
-#train TF-IDF model and create 
-#tfidf=models.TfidfModel(corpus)
-#corpus_tfidf=tfidf[corpus]
+def run_with_HDPLDA(doc_fname,ofile):
+    """ Generate topics and groups and print the result"""
+    # Create of Load the dictionary and corpus from the documents file
+    dict_fname='../models/deals.dict'
+    dictionary,corpus=create_dict_and_corpus(doc_fname,dict_fname)
+    
+    #num_of_topics=50    
+    # Perform modelliing with HDP + LDA
+    hdplda_file='../models/hdplda.model'
+    hdplda,num_of_topics=model_with_hdplda(corpus,dictionary,hdplda_file)
+    corpus_hdplda=hdplda[corpus]
+    kmeans_hdplda=topic_based_kmeans(corpus_hdplda,num_of_topics,20)
+    # Print output
+    of=open(ofile,'w')
+    of.write('Topic Modelling with HDP+LDA -- K-Means with reduced dimension defined by HDP+LDA topics\n\n')
+    print_topics_with_groups(hdplda,num_of_topics,10,kmeans_hdplda.labels_)
+    of.close()
+    
 
 
-#ldamodel=models.LdaModel.load('../models/lda_100topics.model')
-#corpus_ldamodel=ldamodel[corpus_tfidf]
 
-#ldatop=open('../results/ldatopics.txt','w')
-#for topic in ldamodel.show_topics(10):
-#    ldatop.write(str(topic)+"\n")
-
-i=0
-aa=hdplda[corpus]
-for a in aa:
-    if i<10:
-        print a
-        i = i+1
-    else:
-        break
 

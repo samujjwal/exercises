@@ -1,0 +1,54 @@
+Topic Modelling with LSI -- K-Means with reduced dimension defined by LSI topics
+
+GroupID  --  TopicID  --->                Terms
+4    --    0    --->    free ship get order code save shop use offer price
+5    --    1    --->    link free ship page text save use offer product coupon
+12    --    2    --->    link save free code coupon text ship page use offer
+2    --    3    --->    product price link code high custom ship low qualiti use
+14    --    4    --->    shop code coupon new use save order product 15 select
+13    --    5    --->    save shop use offer get coupon new onlin code free
+3    --    6    --->    shop code product offer order get onlin new deal hotel
+10    --    7    --->    get offer ship code price order item onlin valid special
+1    --    8    --->    new product price offer health use get diet code shop
+18    --    9    --->    new health diet product smart price weight life cooki york
+8    --    10    --->    onlin new valid sep use promot hotel offer remov get
+6    --    11    --->    sep onlin promot remov pleas run offer valid 1 begin
+7    --    12    --->    hotel deal gift code price book card sep offer best
+11    --    13    --->    gift onlin hotel order card get price deal book code
+11    --    14    --->    product gift offer page order price text diet card health
+9    --    15    --->    use order page onlin home product coupon price deal gift
+16    --    16    --->    order sale offer item sign price coupon product purchas free
+11    --    17    --->    home great offer sign onlin select page item sale ship
+19    --    18    --->    home product page select great order sale price text coupon
+15    --    19    --->    coupon code offer price hotel sign day promo gift deal
+11    --    20    --->    use sale sign day code page mac home hotel price
+11    --    21    --->    sale coupon use order day select purchas hotel code free
+11    --    22    --->    sign mac intel appl select core ram sale graphic os
+11    --    23    --->    home page book text 50 ship order month buy deal
+0    --    24    --->    book page 50 home month text best ship sign order
+11    --    25    --->    book deal hotel day order great custom 50 item sale
+17    --    26    --->    hotel day sale book great one offer page month get
+0    --    27    --->    best sale deal intel mac home appl select today 50
+11    --    28    --->    book mac sign deal 10 great sale price tool intel
+11    --    29    --->    10 best 50 today select discount custom ship hotel item
+11    --    30    --->    best purchas 10 50 select coupon today onlin sale item
+11    --    31    --->    10 hotel deal 50 book today sign best discount home
+11    --    32    --->    best item ticket buy select purchas coupon hotel deal design
+0    --    33    --->    treatment naturasil sign buy 10 1 purchas onlin custom design
+11    --    34    --->    ticket 10 day mac design buy penguin club today world
+11    --    35    --->    50 buy ship 10 order 1 purchas free de today
+11    --    36    --->    design treatment custom use naturasil de day product today hotel
+11    --    37    --->    10 buy purchas treatment best naturasil select toy sign 1
+11    --    38    --->    de tool la great makita day design today best busi
+11    --    39    --->    de discount item toy la tool suppli sale mac makita
+0    --    40    --->    de design time busi discount ship great select item use
+11    --    41    --->    toy adult de ticket tool sex women top store makita
+11    --    42    --->    toy adult 50 de 1 buy ship ticket top free
+0    --    43    --->    makita today discount day tool 50 special 30 servic item
+11    --    44    --->    makita purchas ship price busi 1 top user discount tool
+0    --    45    --->    makita 50 month buy item custom top avail audiobook ship
+11    --    46    --->    makita discount month purchas time 1 better basic giggl audiobook
+11    --    47    --->    secur memorabilia makita ship design cleanup item better top set
+0    --    48    --->    top promot design memorabilia discount brand set promo makita sell
+11    --    49    --->    one day user includ busi memorabilia custom sport take file
+

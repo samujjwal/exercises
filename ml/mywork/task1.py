@@ -92,5 +92,5 @@ def run(fname):
     print len(guitar_types(open(fname)))
 
 #uncomment to run independtly
-#run('../data/deals.txt')
+run('../data/deals.txt')
     
