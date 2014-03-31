@@ -36,11 +36,6 @@ def get_data_list(file):
     """ Return the list of lines"""
     return [line.lower() for line in open(file)]
     
-gooddata='../data/good_deals.txt'
-baddata='../data/bad_deals.txt'
-testdata='../data/test_deals.txt'
-
-
 
 def get_matrices(good_deals,bad_deals,test_deals):
     """ Return the training and testing matrices with labels """
@@ -130,7 +125,7 @@ def separate_deals(gooddata):
     return deals_with_coupon, deals_without_coupon 
 
 
-def run_knn(nrange,weights,train_mat,ofile):
+def run_knn(nrange,weights,train_mat,labels,ofile):
     """ This function runs KNN algorithm for tuning model using number of neighbors fron nrange and 
     weight from weights"""
     # Tune the weight and the number of neighbors 
@@ -156,61 +151,62 @@ def run_knn(nrange,weights,train_mat,ofile):
                     goodknn=knn
             ofile.write(str(n_neighbors)+" "+str(weight)+" "+str(acc)+" "+str(f1)+"\n")
     return goodknn,n,maxacc,maxf1
-   
-#generate matrix for training along with deals data
-train_mat,labels,test_mat,good_deals,bad_deals,test_deals=get_train_test_data(gooddata,baddata,testdata)
 
-# Tune the KNN model to get better accuracy and f1 score
-ofile1=open('../output/predictionKNNGoodBadDeals.txt','w')
-ofile1.write("Experiment with KNN Model\n\n Running KNN for differnt values of number of neighbors and weight\n")
-ofile1.write("numofneighbors   weight   accuracy     f1score\n")
-
-knn,n,acc,f1=run_knn(range(3,10),['uniform','distance'],train_mat,ofile1)
-
-ofile1.write("Bad Good Deals with KNN : neighbors = "+str(n)+' accuracy = '+str(acc)+' F1 = '+str(f1)+"\n\n")
-#irrespective of weights, n_neighbors=5 has the better result for both accuracy and f1 score
-
-ofile1.write("Prediction with test deals\n\n")
-# Predict the actual test data
-prediction=knn.predict(test_mat)
-for i in range(len(prediction)):
-    if(prediction[i]==0):
-        ofile1.write("Good -->  "+test_deals[i]+"\n")
-    else:
-        ofile1.write("Bad -->  "+test_deals[i]+"\n")
-
-ofile1.close()
-
-# Use Predicted information fro bad and good deals to predict coupon requirement
-
-with_copupon, wihtout_coupon = separate_deals(gooddata)
-
-#select only predcted good deals that needs to be testing
-test_coupon = []
-for i in range(len(prediction)):
-    if prediction[i]==0: #bad_deal need not be processed for querying coupon requirement
-        test_coupon.append(test_deals[i])
-
-train_mat,labels,test_mat=get_matrices(with_copupon, wihtout_coupon,test_coupon)        
-
-ofile1=open('../output/predictionKNNCouponDeals.txt','w')
-ofile1.write("Experiment with KNN Model\n\n Running KNN for differnt values of number of neighbors and weight\n")
-ofile1.write("numofneighbors   weight   accuracy     f1score\n")
-
-knn,n,acc,f1=run_knn(range(3,10),['uniform','distance'],train_mat,ofile1)
-
-ofile1.write("Coupon No-Coupon Deals with KNN : neighbors = "+str(n)+' accuracy = '+str(acc)+' F1 = '+str(f1)+"\n\n")
-
-ofile1.write("Prediction with test deals\n\n")
-prediction=knn.predict(test_mat)
-for i in range(len(prediction)):
-    if(prediction[i]==0):
-        ofile1.write("Coupon -->  "+test_deals[i]+"\n")
-    else:
-        ofile1.write("NoCoupon -->  "+test_deals[i]+"\n")
+def classify_and_writetofile(gooddata,baddata,testdata):   
+    #generate matrix for training along with deals data
+    train_mat,labels,test_mat,good_deals,bad_deals,test_deals=get_train_test_data(gooddata,baddata,testdata)
     
-
-ofile1.close()
+    # Tune the KNN model to get better accuracy and f1 score
+    ofile1=open('../output/predictionKNNGoodBadDeals.txt','w')
+    ofile1.write("Experiment with KNN Model\n\n Running KNN for differnt values of number of neighbors and weight\n")
+    ofile1.write("numofneighbors   weight   accuracy     f1score\n")
+    
+    knn,n,acc,f1=run_knn(range(3,10),['uniform','distance'],train_mat,labels,ofile1)
+    
+    ofile1.write("Bad Good Deals with KNN : neighbors = "+str(n)+' accuracy = '+str(acc)+' F1 = '+str(f1)+"\n\n")
+    #irrespective of weights, n_neighbors=5 has the better result for both accuracy and f1 score
+    
+    ofile1.write("Prediction with test deals\n\n")
+    # Predict the actual test data
+    prediction=knn.predict(test_mat)
+    for i in range(len(prediction)):
+        if(prediction[i]==0):
+            ofile1.write("Good -->  "+test_deals[i]+"\n")
+        else:
+            ofile1.write("Bad -->  "+test_deals[i]+"\n")
+    
+    ofile1.close()
+    
+    # Use Predicted information fro bad and good deals to predict coupon requirement
+    
+    with_copupon, wihtout_coupon = separate_deals(gooddata)
+    
+    #select only predcted good deals that needs to be testing
+    test_coupon = []
+    for i in range(len(prediction)):
+        if prediction[i]==0: #bad_deal need not be processed for querying coupon requirement
+            test_coupon.append(test_deals[i])
+    
+    train_mat,labels,test_mat=get_matrices(with_copupon, wihtout_coupon,test_coupon)        
+    
+    ofile1=open('../output/predictionKNNCouponDeals.txt','w')
+    ofile1.write("Experiment with KNN Model\n\n Running KNN for differnt values of number of neighbors and weight\n")
+    ofile1.write("numofneighbors   weight   accuracy     f1score\n")
+    
+    knn,n,acc,f1=run_knn(range(3,10),['uniform','distance'],train_mat,labels,ofile1)
+    
+    ofile1.write("Coupon No-Coupon Deals with KNN : neighbors = "+str(n)+' accuracy = '+str(acc)+' F1 = '+str(f1)+"\n\n")
+    
+    ofile1.write("Prediction with test deals\n\n")
+    prediction=knn.predict(test_mat)
+    for i in range(len(prediction)):
+        if(prediction[i]==0):
+            ofile1.write("Coupon -->  "+test_deals[i]+"\n")
+        else:
+            ofile1.write("NoCoupon -->  "+test_deals[i]+"\n")
+        
+    
+    ofile1.close()
 
 
 
