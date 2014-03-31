@@ -1,0 +1,104 @@
+Experiment with KNN Model
+
+ Running KNN for differnt values of number of neighbors and weight
+numofneighbors   weight   accuracy     f1score
+3 uniform 0.533333333333 0.363636363636
+3 distance 0.533333333333 0.363636363636
+4 uniform 0.6 0.25
+4 distance 0.6 0.4
+5 uniform 0.666666666667 0.444444444444
+5 distance 0.666666666667 0.444444444444
+6 uniform 0.6 0.25
+6 distance 0.666666666667 0.444444444444
+7 uniform 0.533333333333 0.363636363636
+7 distance 0.533333333333 0.363636363636
+8 uniform 0.6 0.4
+8 distance 0.6 0.4
+9 uniform 0.533333333333 0.363636363636
+9 distance 0.533333333333 0.363636363636
+Bad Good Deals with KNN : neighbors = 5 accuracy = 0.666666666667 F1 = 0.444444444444
+
+Prediction with test deals
+
+good -->  visit amor.com 
+
+good -->  homecoming dresses:10% off on $99
+
+good -->  change your shirt. change the world!
+
+good -->  shop best sellers at chineselaundry.com!
+
+good -->  if you want to change the destination url, please make sure to use http://cj.discountwatchstore.com as the domain. thanks.
+
+good -->  save $25 on orders over $100! the latest styles of rings, earrings, necklaces, bracelets, diamond jewelry and more at myjewelrybox.com! use coupon code: 25off
+
+good -->  smart deals playa del carmen
+
+good -->  imagine you with beautiful, delicious lips - crabtree & evelyn lip tints
+
+good -->  product specfic ad - eajuk500
+
+good -->  furla shop online!
+
+good -->  the book of mormon has dazzled all who see it. and the critics have loved it by honoring the musical with an amazing nine tony awards, including best musical and best book of a musical. its your turn to find out why this show ranks among those popular on broadway today.
+
+good -->  join linea pelle on facebook today
+
+good -->  get 70% off hair treatments in la
+
+good -->  bike tour of budapest page.
+
+good -->  browse gift books and boxed sets at prices you won't find anywhere else! as low as $5.97. start shopping now at booksamillion.com!
+
+good -->  cisco small business 300 series managed switch sg300-28p - switch - 28 ports - managed - desktop, rack-mountable
+
+good -->  tungsten carbide bracelets
+
+good -->  http://www.oneplay.com/download/details/11017?utm_source=cj&utm_medium=cpa&utm_term=pc&utm_content=bf4&utm_campaign=cj-sales
+
+good -->  check out neff watches and hats at journeys now!  neff watches have a bold colorful look that will keep you checking the time again and again.  show now at journeys!
+
+good -->  6 new raquel welch styles!
+
+good -->  rainfall books
+
+good -->  important: if using different destination url, please include parameters that come after factoryoutletstore.com/? in your link. coupon will not work otherwise. &#xd;
+
+good -->  nuance es - nueva versin - dragon naturallyspeaking 12 home - ahorre un 20%. coupon - 'dns12offer'
+
+good -->  avira system speed up
+
+good -->  free shipping & accessories with cameras
+
+good -->  quickfire wines sale as seen on bravo's top chef
+
+good -->  more than 1,200 free crochet patterns. click here today!
+
+good -->  go to shopgetorganized.com.
+
+good -->  invicta deals of the week (up to 92% off)
+
+good -->  29% off  on select products at stockngo.com in honor of leap year. 
+
+good -->  nuance de - neue version - pdf 8 converter -20% sparen - gutscheincode - 'dns12offer' - endet: 31/05/13 - jetzt kaufen.
+
+good -->  if you are looking for a unique birthday gift for men, visit cloud 9 living. they offer over 1,700 experience gifts ranging from race car driving and fighter pilot for a day to golf gifts and wine tastings. this will surely be a birthday gift he'll remember forever!
+
+good -->  wisefire 4 gallon 240 cup fuel source - grab now at $79.99!
+
+good -->  10% off. use promo code uncorked10. exp 12/31/13.
+
+good -->  logitech k120 usb keyboard -  black
+
+good -->  store all eagle ford products
+
+good -->  $15 off any size order $75+ plus great free shipping   use <b>myink15</b>.  expires sept 30
+
+good -->  irobot new logo
+
+good -->  2014 burton snowboard gear in stock at the-house.com!  get it before it's gone!
+
+good -->  9/1-9/7 - online only! up to 30% off chain saws from marketplace partners at sears.com
+
+good -->  disc duplication services from tune core
+

@@ -1,0 +1,56 @@
+Experiment with KNN Model
+
+ Running KNN for differnt values of number of neighbors and weight
+numofneighbors   weight   accuracy     f1score
+3 uniform 0.666666666667 0.4
+3 distance 0.666666666667 0.4
+4 uniform 0.666666666667 0.4
+4 distance 0.666666666667 0.4
+5 uniform 0.555555555556 0.6
+5 distance 0.888888888889 0.857142857143
+6 uniform 0.444444444444 0.444444444444
+6 distance 0.777777777778 0.666666666667
+7 uniform 0.666666666667 0.727272727273
+7 distance 1.0 1.0
+8 uniform 0.666666666667 0.727272727273
+8 distance 1.0 1.0
+9 uniform 0.666666666667 0.727272727273
+9 distance 1.0 1.0
+Coupon No-Coupon Deals with KNN : neighbors = 7 accuracy = 1.0 F1 = 1.0
+
+Prediction with test deals
+
+Coupon -->  homecoming dresses:10% off on $99
+
+Coupon -->  shop best sellers at chineselaundry.com!
+
+Coupon -->  save $25 on orders over $100! the latest styles of rings, earrings, necklaces, bracelets, diamond jewelry and more at myjewelrybox.com! use coupon code: 25off
+
+Coupon -->  find auditions - sign up for free with explore talent
+
+Coupon -->  up to 40% off edlund products from katom.com! click here!
+
+Coupon -->  homepage.
+
+Coupon -->  the book of mormon has dazzled all who see it. and the critics have loved it by honoring the musical with an amazing nine tony awards, including best musical and best book of a musical. its your turn to find out why this show ranks among those popular on broadway today.
+
+Coupon -->  http://www.oneplay.com/download/details/11017?utm_source=cj&utm_medium=cpa&utm_term=pc&utm_content=bf4&utm_campaign=cj-sales
+
+Coupon -->  promo_hotel two-day sale! save big on limited time offers every tuesday with travelocity!
+
+Coupon -->  check out neff watches and hats at journeys now!  neff watches have a bold colorful look that will keep you checking the time again and again.  show now at journeys!
+
+Coupon -->  6 new raquel welch styles!
+
+Coupon -->  rainfall books
+
+Coupon -->  nuance es - nueva versin - dragon naturallyspeaking 12 home - ahorre un 20%. coupon - 'dns12offer'
+
+Coupon -->  helmut helmut lang
+
+Coupon -->  avira system speed up
+
+Coupon -->  quickfire wines sale as seen on bravo's top chef
+
+Coupon -->  29% off  on select products at stockngo.com in honor of leap year. 
+
